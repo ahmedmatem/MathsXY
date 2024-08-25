@@ -4,6 +4,7 @@
 
     using MathsXY.Infrastructure.Data.Types;
     using static MathsXY.Infrastructure.Data.Constants;
+
     public class Problem : DataModel
     {
         [Required]
@@ -23,6 +24,13 @@
 
         public int Points { get; set; }
 
+        public MathsCategory Category { get; set; }
 
+        public string? Source { get; set; }
+
+        // Links to file attachments (images, diagrams, ...)
+        public string? Attachments { get; set; }
+
+        public SolutionMethod SolutionMethod { get; set; }
     }
 }
