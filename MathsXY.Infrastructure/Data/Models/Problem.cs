@@ -18,5 +18,11 @@
 
         [Required]
         public string CorrectAnswer { get; set; } = null!;
+
+        public ProblemTag Tag { get; set; }
+
+        public int Points { get; set; }
+
+
     }
 }
