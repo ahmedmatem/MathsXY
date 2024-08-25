@@ -1,0 +1,6 @@
+@MathsXY.WebAPI_HostAddress = http://localhost:5230
+
+GET {{MathsXY.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
