@@ -1,8 +1,5 @@
-using MathsXY.Web.Data;
-using MathsXY.Web.Extensions;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using MathsXY.Web.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
