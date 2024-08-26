@@ -7,8 +7,9 @@
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
     using MathsXY.Infrastructure.Extensions;
+    using Microsoft.AspNetCore.Identity;
 
-    public class MathsXYContext : IdentityDbContext
+    public class MathsXYContext : IdentityDbContext<IdentityUser>
     {
         public MathsXYContext(DbContextOptions options) : base(options)
         {

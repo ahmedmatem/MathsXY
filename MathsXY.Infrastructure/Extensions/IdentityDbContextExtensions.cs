@@ -4,10 +4,11 @@
     using Microsoft.EntityFrameworkCore;
 
     using MathsXY.Infrastructure.Data.Models;
+    using Microsoft.AspNetCore.Identity;
 
     public static class IdentityDbContextExtensions
     {
-        public static void ApplyAuditInfoRules(this IdentityDbContext context)
+        public static void ApplyAuditInfoRules(this IdentityDbContext<IdentityUser> context)
         {
             foreach (var entry in context.ChangeTracker.Entries()
                 .Where(e => e.Entity is DataModel))
