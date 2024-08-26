@@ -1,7 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 using MathsXY.Web.Extensions;
+using MathsXY.Web.Data;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("MathsXYWebContextConnection") ?? throw new InvalidOperationException("Connection string 'MathsXYWebContextConnection' not found.");
+
+builder.Services.AddDbContext<MathsXYWebContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<MathsXYWebContext>();
 
 // Add services to the container.
 builder.Services.AddApplicationContext(builder.Configuration);
